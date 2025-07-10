@@ -1,10 +1,18 @@
+/* Global font: Roboto */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   background-color: #f4f4f4;
 }
+
+/* Use Inter for header and navbar */
+header,
+nav {
+  font-family: 'Inter', sans-serif;
+}
+
 
 header {
   background-color: #333;
@@ -43,18 +51,39 @@ footer {
 }
 
 .bio-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1rem;
 }
 
 .bio-pic {
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.bio-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.bio-text p {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.bio-text ul {
+  margin: 0.5rem 0 1rem 1.2rem;
+  padding-left: 1rem;
+}
+
+.bio-text li {
+  list-style: disc;
+}
+
+
 
 .dropdown {
   display: inline-block;
@@ -95,3 +124,30 @@ footer {
   background-color: #555;
   border-radius: 8px 8px 0 0;
 }
+
+.project {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.project h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.project p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.project a {
+  color: #2a5db0;
+  text-decoration: none;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
