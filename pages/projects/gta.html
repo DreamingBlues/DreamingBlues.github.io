@@ -1419,10 +1419,10 @@
         }
 
         function createStreetLamp(x, y, z, rot) {
-            const poleHeight = 14; const group = new THREE.Group(); group.position.set(x, y, z); group.rotation.y = rot;
+            const poleHeight = 14; const group = new THREE.Group(); group.position.set(x, y, z); group.rotation.y = -rot;
             const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, poleHeight), new THREE.MeshLambertMaterial({ color: 0x222222 })); pole.position.y = poleHeight/2; group.add(pole);
-            const arm = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 4), new THREE.MeshLambertMaterial({ color: 0x222222 })); arm.position.set(1.5, poleHeight - 0.5, 0); arm.rotation.z = -0.2; group.add(arm);
-            const bulb = new THREE.Mesh(new THREE.BoxGeometry(1, 0.4, 0.8), new THREE.MeshBasicMaterial({ color: 0xffffcc })); bulb.position.set(3.5, poleHeight - 1, 0); group.add(bulb);
+            const arm = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 4), new THREE.MeshLambertMaterial({ color: 0x222222 })); arm.position.set(1.5, poleHeight - 0.5, 0); arm.rotation.y = Math.PI / 2; group.add(arm);
+            const bulb = new THREE.Mesh(new THREE.BoxGeometry(1, 0.4, 0.8), new THREE.MeshBasicMaterial({ color: 0xffffcc })); bulb.position.set(3.5, poleHeight - 0.75, 0); group.add(bulb);
             const beam = new THREE.Mesh(new THREE.ConeGeometry(5, 18, 8, 1, true), new THREE.MeshBasicMaterial({ color: 0xffffee, transparent: true, opacity: 0.04, depthWrite: false, side: THREE.DoubleSide })); beam.position.set(3.5, poleHeight - 10, 0); group.add(beam);
             lamps.push(new THREE.Vector3(x, y + poleHeight, z)); cityGroup.add(group); colliders.push(new THREE.Box3().setFromObject(pole));
         }
